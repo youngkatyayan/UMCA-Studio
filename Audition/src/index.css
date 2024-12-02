@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body{
+    background-color: black;
+}
+
+.nav-link {
+    color: aliceblue;
+    position: relative;
+    text-decoration: none;
+    display: inline-block;
+    transition: color 0.3s;
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    top: -8px; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid yellow; 
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.nav-link:hover::before {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-3px); 
+}
+
+.nav-link:hover {
+    color: yellow;
+    border-bottom: 2px solid yellow;
+}
+
+.text-effect span {
+    display: inline-block;
+    transform: translateY(0);
+    opacity: 1;
+    transition: all 0.5s ease-out;
+    animation: popUp 0.8s ease forwards;
+    animation-delay: 0s;
+}
+
+.text-effect:hover span {
+    animation-name: popUp;
+}
+
+@keyframes popUp {
+    0% {
+        transform: translateY(10px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+.text-effect span {
+    display: inline-block;
+    transform: translateY(0) scale(1);
+    opacity: 1;
+    transition: all 0.3s ease-out;
+}
+
+.text-effect:hover span {
+    animation: rippleEffect 0.6s ease-in-out infinite;
+}
+
+@keyframes rippleEffect {
+    0% {
+        transform: translateY(0) scale(1);
+        text-shadow: 0 0 5px rgba(135, 206, 250, 0.6);
+    }
+    25% {
+        transform: translateY(-5px) scale(1.1);
+        text-shadow: 0 0 10px rgba(135, 206, 250, 0.8);
+    }
+    50% {
+        transform: translateY(0) scale(1);
+        text-shadow: 0 0 5px rgba(135, 206, 250, 0.6);
+    }
+    75% {
+        transform: translateY(3px) scale(0.95);
+        text-shadow: 0 0 7px rgba(135, 206, 250, 0.7);
+    }
+    100% {
+        transform: translateY(0) scale(1);
+        text-shadow: 0 0 5px rgba(135, 206, 250, 0.6);
+    }
+}
+
+@keyframes fadeInColor {
+    0% {
+      opacity: 0;
+      color: white;
+      transform: translateY(20px);
+    }
+    50% {
+      color: #ff7f50; 
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+      color: #00bfff; 
+    }
+  }
+  
+  .transition-all {
+    transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+  }
+  
