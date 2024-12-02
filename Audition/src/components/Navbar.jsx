@@ -92,6 +92,12 @@ const Navbar = () => {
                     >
                         Contact
                     </Link>
+                    <Link
+                        to="/login"
+                        className="text-white bg-blue-950 px-3 py-1 rounded-lg hover:animate-pulse hover:translate-x-2 hover:shadow-md text-lg font-semibold"
+                    >
+                        Login
+                    </Link>
                 </div>
 
             </div>

@@ -3,6 +3,7 @@ import Navbar from './Navbar.jsx';
 import umcaVideo from '../assets/umca.mp4';
 import Footer from './Footer.jsx';
 import HomeSection from './pages/HomeSection.jsx';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
     const words = ['Singing', 'Dancing', 'Modeling', 'Acting'];
@@ -15,8 +16,15 @@ const Home = () => {
         }, 1000);
         return () => clearInterval(interval);
     }, []);
+
+    // const disableRightClick = (e) => {
+    //     e.preventDefault();
+    // };
+  
     return (
-        <div className="">
+        <div className="" 
+        // onContextMenu={disableRightClick}
+        >
             <Navbar />
 
             <div className="relative sm:h-[75vh] my-5 h-[30vh] shadow-md shadow-white">
@@ -41,10 +49,10 @@ const Home = () => {
                     </div>
                     <h2 className='sm:text-4xl font-semibold pt-1 ' style={{ color: 'aliceblue' }}>Discover the Next Big Talent</h2>
 
-                    <button className="relative mt-6 px-3 sm:px-6 py-2 sm:py-3 bg-orange-500 text-white font-semibold rounded hover:bg-orange-600 transition-all duration-300 overflow-hidden group">
+                    <Link to={'/signup'} className="relative mt-6 px-3 sm:px-6 py-2 sm:py-3 bg-orange-500 text-white font-semibold rounded hover:bg-orange-600 transition-all duration-300 overflow-hidden group">
                         Join Now
                         <span className="absolute inset-0 bg-white opacity-30 rounded-full transform scale-0 group-hover:scale-150 transition-transform duration-500 ease-out"></span>
-                    </button>
+                    </Link>
 
                 </div>
             </div>

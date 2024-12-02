@@ -3,6 +3,13 @@
 @tailwind utilities;
 
 
+  /* body {
+    user-select: none; 
+    -webkit-user-select: none; 
+    -moz-user-select: none;
+    -ms-user-select: none; 
+  }
+   */
 body{
     background-color: black;
 }
@@ -115,5 +122,14 @@ body{
   
   .transition-all {
     transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+  }
+  .scroll-progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 7px;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(8,37,140,1) 46%, rgba(0,212,255,1) 100%); 
+    transition: width 0.3s ease-out;
+    z-index: 1000;
   }
   
