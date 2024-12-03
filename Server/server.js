@@ -4,6 +4,7 @@ import cors from 'cors'
 import 'colors'
 import { db } from './database/db.js'
 import bodyParser from 'body-parser'
+import userRouter from './routes/userRoutes.js'
 dotenv.config()
 const app = express()
 // database connection
@@ -19,9 +20,12 @@ db.getConnection((err, connection) => {
 
 app.use(cors())
 app.use(bodyParser.json())
+
+// routes here 
 app.get('/', (req, res) => {
     res.send('<h1>Hello UMCA </h1>')
 })
+app.use('/api/v1',userRouter)
 
 const PORT = process.env.PORT || 8080
 
